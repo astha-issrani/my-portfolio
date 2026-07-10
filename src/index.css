@@ -1211,6 +1211,29 @@ main {
   text-decoration: underline;
 }
 
+.projects-grid-names {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.project-card-name-only {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  text-align: center;
+}
+
+.project-name-only {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 1.2px;
+  line-height: 1.35;
+  margin: 0;
+  padding-top: 6px;
+}
+
 .projects-grid-minimal {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 12px;
@@ -1838,6 +1861,15 @@ main {
 
   .project-card {
     padding: 20px;
+  }
+
+  .projects-grid-names {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .project-name-only {
+    font-size: 0.72rem;
   }
 
   .project-section-header {
