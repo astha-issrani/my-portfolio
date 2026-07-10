@@ -189,6 +189,194 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 100px 24px;
+  position: relative;
+}
+
+/* ─── Creative sections & colorful cards ─── */
+.section-creative::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  border-radius: 24px;
+}
+
+.section-experience::before {
+  background: radial-gradient(ellipse 60% 40% at 0% 30%, color-mix(in srgb, #ec4899 8%, transparent), transparent);
+}
+
+.section-projects::before {
+  background: radial-gradient(ellipse 55% 45% at 100% 20%, color-mix(in srgb, #a855f7 8%, transparent), transparent);
+}
+
+.section-skills::before {
+  background: radial-gradient(ellipse 50% 50% at 50% 100%, color-mix(in srgb, #06b6d4 8%, transparent), transparent);
+}
+
+.section-education::before {
+  background: radial-gradient(ellipse 60% 40% at 20% 50%, color-mix(in srgb, #f59e0b 7%, transparent), transparent);
+}
+
+.contact-section.section-creative::before {
+  background: radial-gradient(ellipse 50% 40% at 80% 60%, color-mix(in srgb, #10b981 8%, transparent), transparent);
+}
+
+.colorful-card {
+  --card-a: var(--cyan);
+  --card-b: var(--purple);
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--card-a) 28%, transparent);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--card-a) 10%, var(--bg-card)) 0%,
+      color-mix(in srgb, var(--card-b) 6%, var(--bg-card)) 100%
+    );
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  box-shadow:
+    0 4px 24px color-mix(in srgb, var(--card-a) 12%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 40%, transparent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.colorful-card:hover {
+  border-color: color-mix(in srgb, var(--card-a) 45%, transparent);
+  box-shadow:
+    0 8px 32px color-mix(in srgb, var(--card-a) 22%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--card-b) 15%, transparent);
+}
+
+.card-accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--card-a), var(--card-b));
+  background-size: 200% 100%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.card-emoji {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 1.5rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--card-a) 40%, transparent));
+  pointer-events: none;
+}
+
+.card-emoji-sm {
+  font-size: 1.1rem;
+  top: 12px;
+  right: 14px;
+}
+
+.card-company {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.colorful-badge {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--badge-c, var(--card-a)) 18%, transparent), color-mix(in srgb, var(--card-b) 10%, transparent)) !important;
+  border-color: color-mix(in srgb, var(--badge-c, var(--card-a)) 35%, transparent) !important;
+  color: var(--badge-c, var(--card-a)) !important;
+}
+
+.colorful-chip {
+  border-color: color-mix(in srgb, var(--chip-c) 30%, transparent) !important;
+  background: color-mix(in srgb, var(--chip-c) 10%, transparent) !important;
+  color: var(--text) !important;
+}
+
+.colorful-chip:hover {
+  background: color-mix(in srgb, var(--chip-c) 22%, transparent) !important;
+  border-color: var(--chip-c) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--chip-c) 30%, transparent);
+}
+
+.colorful-section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--card-a) 25%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-a) 8%, var(--bg-card)), color-mix(in srgb, var(--card-b) 5%, var(--bg-card)));
+  margin-bottom: 24px;
+}
+
+.section-label-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px color-mix(in srgb, var(--card-a) 50%, transparent));
+}
+
+.colorful-contact-row {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-a) 6%, transparent), color-mix(in srgb, var(--card-b) 4%, transparent));
+  border: 1px solid color-mix(in srgb, var(--card-a) 15%, transparent);
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+.colorful-contact-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-emoji {
+  margin-right: 8px;
+}
+
+.edu-list-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px 24px;
+}
+
+.experience-card .card-body {
+  padding: 24px;
+  padding-top: 20px;
+}
+
+.skill-module {
+  padding: 22px;
+  padding-top: 18px;
+}
+
+.edu-card {
+  padding: 22px;
+  padding-top: 18px;
+}
+
+.edu-card .card-body {
+  padding: 0;
+  padding-top: 8px;
+}
+
+.contact-panel.colorful-card {
+  padding: 28px;
+  padding-top: 22px;
+}
+
+.contact-panel .contact-details {
+  margin-bottom: 28px;
+}
+
+.contact-panel .contact-row {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sub-title {
+  background: none;
+  -webkit-text-fill-color: unset;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 /* ─── Navbar ─── */
@@ -935,6 +1123,99 @@ main {
 }
 
 /* ─── Projects ─── */
+.project-section {
+  margin-bottom: 56px;
+}
+
+.project-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-section-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--cyan);
+}
+
+.project-section-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex: 1;
+  min-width: 200px;
+}
+
+.project-count {
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--hot);
+  background: color-mix(in srgb, var(--hot) 8%, transparent);
+}
+
+.project-demo-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color 0.2s, letter-spacing 0.2s;
+}
+
+.project-demo-link:hover {
+  color: var(--purple);
+  letter-spacing: 1.5px;
+}
+
+.project-card-minimal {
+  padding: 18px 20px;
+  padding-top: 16px;
+}
+
+.project-name-minimal {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  padding-right: 28px;
+}
+
+.project-line {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-live-link {
+  color: var(--cyan);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.project-live-link:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.projects-grid-minimal {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1557,6 +1838,30 @@ main {
 
   .project-card {
     padding: 20px;
+  }
+
+  .project-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .project-section-subtitle {
+    min-width: unset;
+  }
+
+  .edu-list-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .colorful-contact-row {
+    padding: 12px 14px;
+  }
+
+  .card-emoji {
+    font-size: 1.2rem;
+    top: 10px;
+    right: 12px;
   }
 
   .project-header h3 {

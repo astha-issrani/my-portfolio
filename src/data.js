@@ -35,30 +35,50 @@ export const experience = [
   },
 ]
 
-export const projects = [
+export const projectSections = [
   {
-    name: 'Meetify',
-    github: 'https://github.com/astha-issrani/meetify',
-    demo: null,
-    description: 'Real-time video communication platform with sub-100ms participant synchronization and secure room-level messaging.',
-    highlights: [
-      'Engineered real-time video using Socket.io and WebRTC with sub-100ms latency for participant synchronization.',
-      'Implemented stateless JWT-based authentication and authorization to improve security.',
+    id: 'personal',
+    title: 'Personal Projects',
+    subtitle: 'Independent full-stack builds',
+    projects: [
+      {
+        name: 'Meetify',
+        description: 'Real-time video communication platform with WebRTC and secure room messaging.',
+        demo: null,
+      },
+      {
+        name: 'VibeKit Studio',
+        description: 'Full-stack micro-site builder with real-time theme customization.',
+        demo: 'https://inspiring-salmiakki-b036cf.netlify.app',
+      },
     ],
-    tech: ['React.js', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'RESTful APIs'],
   },
   {
-    name: 'VibeKit Studio',
-    github: 'https://github.com/astha-issrani/vibekit-studio',
-    demo: 'https://inspiring-salmiakki-b036cf.netlify.app',
-    description: 'Full-stack micro-site builder with real-time theme customization and publishing.',
-    highlights: [
-      'Developed a full-stack micro-site builder with real-time theme customization and publishing.',
-      'Engineered a multi-tenant architecture using Supabase/PostgreSQL with httpOnly cookie security.',
+    id: 'internship',
+    title: 'Internship Projects',
+    subtitle: 'Built during PurpleMerit internship',
+    projects: [
+      { name: 'Purple Stream App', description: 'Live video streaming platform with on-demand content.', demo: 'https://video-streaming-livid-eight.vercel.app' },
+      { name: 'E-Book Service', description: 'Digital book library with a seamless reading experience.', demo: 'https://ebookservice.vercel.app' },
+      { name: 'Website Maker', description: 'Drag-and-drop website builder with customizable templates.', demo: 'https://website-maker-mu.vercel.app' },
+      { name: 'UI/UX Generator', description: 'Tool to design user interfaces and experiences quickly.', demo: 'https://ui-ux-generator-mu.vercel.app' },
+      { name: 'Bank Statement Converter', description: 'Converts PDF bank statements to Excel or CSV.', demo: 'https://bank-statement-converter-697q.onrender.com' },
+      { name: 'CertForge', description: 'Create and distribute professional certificates with templates.', demo: 'https://cert-forge-mu.vercel.app' },
+      { name: 'Affiliate Website', description: 'Product discovery platform with deals and rewards.', demo: 'https://affiliate-7fps.onrender.com' },
+      { name: 'Corevita Website', description: 'Wellness platform with health resources and products.', demo: 'https://corevita-website.vercel.app' },
+      { name: 'Blog Page', description: 'Blog platform for articles and community engagement.', demo: 'https://blog-page-gray-gamma.vercel.app' },
+      { name: 'Editorial Page', description: 'Curated news and editorial content platform.', demo: 'https://editorial-seven.vercel.app' },
+      { name: 'Etsy Bestsellers', description: 'Showcase of popular handmade and vintage products.', demo: 'https://etsy-bestsellers.vercel.app' },
+      { name: 'Lulu Stream Clone', description: 'Movie and TV streaming platform clone.', demo: 'https://lulu-stream-8fhq.vercel.app' },
+      { name: 'Astrology Website', description: 'Personalized horoscopes and astrological readings.', demo: 'https://astro-website-steel.vercel.app/en' },
+      { name: 'Purple Extension', description: 'Chrome extension for automated meeting uploads.', demo: null },
+      { name: 'Shorts Generator', description: 'Auto-generates short-form videos for social media.', demo: null },
     ],
-    tech: ['React', 'Tailwind', 'Node.js', 'Supabase', 'Netlify Functions', 'JWT', 'Vite'],
   },
 ]
+
+// Backward-compatible export
+export const projects = projectSections.flatMap((s) => s.projects)
 
 export const skills = {
   Languages: ['JavaScript (ES6+)', 'C++', 'Python'],

@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion'
 import { profile } from '../data'
+import { getAccent } from '../cardAccents'
 
 const contactItems = [
-  { label: 'Name', value: profile.name },
-  { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
-  { label: 'Reach Me', value: 'You can reach me through email — feel free to get in touch!' },
-  { label: 'Location', value: profile.location },
+  { label: 'Name', value: profile.name, emoji: '👤' },
+  { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, emoji: '✉️' },
+  { label: 'Reach Me', value: 'You can reach me through email — feel free to get in touch!', emoji: '💬' },
+  { label: 'Location', value: profile.location, emoji: '📍' },
 ]
 
 export default function Contact() {
+  const panelAccent = getAccent(6)
+
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section section-creative contact-section">
       <div className="section-header">
         <span className="section-tag">// 05</span>
         <h2 className="section-title">CONTACT</h2>
@@ -18,25 +21,39 @@ export default function Contact() {
       </div>
 
       <motion.div
-        className="contact-panel"
+        className="colorful-card contact-panel"
+        style={{ '--card-a': panelAccent.a, '--card-b': panelAccent.b }}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
+        <span className="card-emoji" aria-hidden="true">📬</span>
+        <div className="card-accent-bar" />
+
         <div className="contact-details">
-          {contactItems.map((item) => (
-            <div key={item.label} className="contact-row">
-              <span className="contact-label">{item.label}</span>
-              {item.href ? (
-                <a href={item.href} className="contact-value link">
-                  {item.value}
-                </a>
-              ) : (
-                <span className="contact-value">{item.value}</span>
-              )}
-            </div>
-          ))}
+          {contactItems.map((item, i) => {
+            const accent = getAccent(i)
+            return (
+              <div
+                key={item.label}
+                className="contact-row colorful-contact-row"
+                style={{ '--card-a': accent.a, '--card-b': accent.b }}
+              >
+                <span className="contact-label">
+                  <span className="contact-emoji">{item.emoji}</span>
+                  {item.label}
+                </span>
+                {item.href ? (
+                  <a href={item.href} className="contact-value link" style={{ color: accent.a }}>
+                    {item.value}
+                  </a>
+                ) : (
+                  <span className="contact-value">{item.value}</span>
+                )}
+              </div>
+            )
+          })}
         </div>
 
         <div className="contact-actions">
