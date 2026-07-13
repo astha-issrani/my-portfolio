@@ -7,29 +7,29 @@
 }
 
 :root {
-  --bg: #fff8f1;
-  --bg-card: rgba(255, 255, 255, 0.94);
-  --cyan: #0d9488;
-  --green: #e11d48;
-  --purple: #ea580c;
-  --hot: #ca8a04;
-  --text: #1c1209;
-  --text-muted: #8a5a3c;
-  --border: rgba(13, 148, 136, 0.28);
-  --glow-cyan: 0 0 22px rgba(13, 148, 136, 0.28);
-  --glow-green: 0 0 18px rgba(225, 29, 72, 0.22);
-  --grid-primary: 13, 148, 136;
-  --grid-accent: 234, 88, 12;
-  --bg-rgb: 255, 248, 241;
-  --robot-bg: #ffedd5;
-  --robot-bg-dark: #fed7aa;
-  --navbar-scrolled: rgba(255, 248, 241, 0.92);
-  --gradient-text: linear-gradient(135deg, #0d9488 0%, #e11d48 40%, #ea580c 70%, #ca8a04 100%);
-  --gradient-border: linear-gradient(135deg, #0d9488, #e11d48, #ea580c, #ca8a04);
-  --blob-1: rgba(13, 148, 136, 0.2);
-  --blob-2: rgba(225, 29, 72, 0.14);
-  --blob-3: rgba(234, 88, 12, 0.16);
-  --blob-4: rgba(202, 138, 4, 0.12);
+  --bg: #fffdf8;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --cyan: #ec4899;
+  --green: #f97316;
+  --purple: #a855f7;
+  --hot: #eab308;
+  --text: #2a1630;
+  --text-muted: #8b5a7a;
+  --border: rgba(236, 72, 153, 0.28);
+  --glow-cyan: 0 0 22px rgba(236, 72, 153, 0.28);
+  --glow-green: 0 0 18px rgba(249, 115, 22, 0.22);
+  --grid-primary: 236, 72, 153;
+  --grid-accent: 168, 85, 247;
+  --bg-rgb: 255, 253, 248;
+  --robot-bg: #fff1f7;
+  --robot-bg-dark: #fce7f3;
+  --navbar-scrolled: rgba(255, 253, 248, 0.94);
+  --gradient-text: linear-gradient(135deg, #eab308 0%, #f97316 25%, #ec4899 55%, #a855f7 100%);
+  --gradient-border: linear-gradient(135deg, #eab308, #f97316, #ec4899, #a855f7);
+  --blob-1: rgba(234, 179, 8, 0.22);
+  --blob-2: rgba(236, 72, 153, 0.18);
+  --blob-3: rgba(168, 85, 247, 0.16);
+  --blob-4: rgba(249, 115, 22, 0.14);
   --font-display: 'Orbitron', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -223,11 +223,11 @@ main {
 }
 
 .section-blackboard::before {
-  background: radial-gradient(ellipse 55% 40% at 10% 70%, color-mix(in srgb, #0d9488 10%, transparent), transparent);
+  background: radial-gradient(ellipse 55% 40% at 10% 70%, color-mix(in srgb, #a855f7 10%, transparent), transparent);
 }
 
 .section-games::before {
-  background: radial-gradient(ellipse 55% 45% at 90% 30%, color-mix(in srgb, #e11d48 9%, transparent), transparent);
+  background: radial-gradient(ellipse 55% 45% at 90% 30%, color-mix(in srgb, #ec4899 9%, transparent), transparent);
 }
 
 .colorful-card {
@@ -381,10 +381,16 @@ main {
 }
 
 .sub-title {
-  background: none;
-  -webkit-text-fill-color: unset;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin-top: 8px;
   margin-bottom: 16px;
+  background: linear-gradient(120deg, var(--card-a, var(--cyan)), var(--card-b, var(--purple)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ─── Navbar ─── */
@@ -718,7 +724,8 @@ main {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 5s ease infinite;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, var(--cyan) 40%, transparent));
+  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--cyan) 45%, transparent))
+    drop-shadow(0 0 40px color-mix(in srgb, var(--hot) 25%, transparent));
 }
 
 .glitch {
@@ -932,16 +939,21 @@ main {
 }
 
 .section-tag {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   color: var(--hot);
-  letter-spacing: 2px;
-  text-shadow: 0 0 12px color-mix(in srgb, var(--hot) 50%, transparent);
+  letter-spacing: 2.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--hot) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--hot) 35%, transparent);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--hot) 45%, transparent);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+  font-weight: 800;
   letter-spacing: 4px;
   white-space: nowrap;
   background: var(--gradient-text);
@@ -950,18 +962,23 @@ main {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 6s ease infinite;
-}
-
-.hero-content {
-  min-width: 0;
+  filter: drop-shadow(0 2px 10px color-mix(in srgb, var(--cyan) 28%, transparent));
+  position: relative;
 }
 
 .section-line {
   flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--green), transparent);
-  background-size: 200% 100%;
-  animation: gradient-shift 4s ease infinite;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--gradient-border);
+  background-size: 200% auto;
+  opacity: 0.85;
+  animation: gradient-shift 8s ease infinite;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--purple) 30%, transparent);
+}
+
+.hero-content {
+  min-width: 0;
 }
 
 /* ─── Timeline / Cards ─── */
@@ -1155,9 +1172,16 @@ main {
 
 .project-section-title {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: var(--cyan);
+  background: var(--gradient-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 7s ease infinite;
+  filter: drop-shadow(0 1px 8px color-mix(in srgb, var(--purple) 25%, transparent));
 }
 
 .project-section-subtitle {
@@ -1363,9 +1387,13 @@ main {
 
 .skill-module-header h3 {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: var(--cyan);
+  background: linear-gradient(120deg, var(--card-a), var(--card-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .skill-chips {
@@ -1424,10 +1452,14 @@ main {
 
 .edu-card h3 {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 1px;
-  color: var(--cyan);
   margin-bottom: 8px;
+  background: linear-gradient(120deg, var(--card-a), var(--card-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .edu-institution {
@@ -1458,14 +1490,14 @@ main {
 
 .sub-title {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 2px;
-  background: var(--gradient-text);
-  background-size: 200% auto;
+  margin-bottom: 16px;
+  background: linear-gradient(120deg, var(--card-a, var(--cyan)), var(--card-b, var(--purple)));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
 }
 
 /* ─── Contact ─── */

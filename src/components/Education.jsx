@@ -31,7 +31,7 @@ export default function Education() {
               <span className="card-emoji" aria-hidden="true">{i === 0 ? '🎓' : '📚'}</span>
               <div className="card-accent-bar" />
               <div className="card-body">
-                <h3 style={{ color: accent.a }}>{entry.degree}</h3>
+                <h3>{entry.degree}</h3>
                 <p className="edu-institution">{entry.institution}</p>
                 {entry.note && <p className="edu-note" style={{ color: accent.b }}>{entry.note}</p>}
                 {entry.period && (
@@ -62,7 +62,7 @@ export default function Education() {
         >
           <span className="card-emoji" aria-hidden="true">🏆</span>
           <div className="card-accent-bar" />
-          <h3 className="sub-title" style={{ color: achieveAccent.a }}>ACHIEVEMENTS & CERTIFICATIONS</h3>
+          <h3 className="sub-title">ACHIEVEMENTS & CERTIFICATIONS</h3>
           <ul className="card-list">
             {achievements.map((a) => (
               <li key={a}>
@@ -84,7 +84,7 @@ export default function Education() {
         >
           <span className="card-emoji" aria-hidden="true">🌟</span>
           <div className="card-accent-bar" />
-          <h3 className="sub-title" style={{ color: extraAccent.a }}>EXTRA-CURRICULAR ACTIVITIES</h3>
+          <h3 className="sub-title">EXTRA-CURRICULAR ACTIVITIES</h3>
           <ul className="card-list edu-list-columns">
             {extracurricular.map((a) => (
               <li key={a.slice(0, 40)}>

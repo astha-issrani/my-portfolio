@@ -28,7 +28,7 @@ export default function Skills() {
               <span className="card-emoji" aria-hidden="true">{skillIcons[category] || accent.emoji}</span>
               <div className="card-accent-bar" />
               <div className="skill-module-header">
-                <h3 style={{ color: accent.a }}>{category}</h3>
+                <h3>{category}</h3>
               </div>
               <div className="skill-chips">
                 {items.map((skill, si) => (
