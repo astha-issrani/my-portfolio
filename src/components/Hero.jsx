@@ -20,33 +20,37 @@ export default function Hero() {
     <section id="hero" className="hero section">
       <motion.div className="hero-card neo-card" variants={container} initial="hidden" animate="show">
         <motion.div className="hero-stickers" variants={item}>
-          <span className="sticker sticker-pink">Backend + Full Stack</span>
-          <span className="sticker sticker-yellow">Open to roles 🚀</span>
+          <span className="sticker sticker-pink">APIs · Systems · Web</span>
+          <span className="sticker sticker-yellow">Available for internships</span>
         </motion.div>
 
         <div className="hero-layout">
           <motion.div className="hero-content" variants={item}>
-            <h1 className="hero-name">{profile.name.split(' ')[0]}</h1>
-            <div className="hero-role-badge">FULL_STACK_DEVELOPER()</div>
+            <p className="hero-kicker">portfolio.exe</p>
+            <h1 className="hero-name">
+              <span className="hero-name-line">ASTHA</span>
+              <span className="hero-name-line">ISSRANI</span>
+            </h1>
+            <div className="hero-role-badge">backend + full-stack engineer</div>
 
             <div className="hero-meta-list">
               <div>
-                <span className="meta-tag tag-yellow">[LOCATION]</span>
-                {profile.location.toUpperCase()}
+                <span className="meta-tag tag-yellow">based in</span>
+                {profile.location}
               </div>
               <div>
-                <span className="meta-tag tag-green">[STATUS]</span>
-                B.TECH CSE · 2022–2026
+                <span className="meta-tag tag-green">studying</span>
+                B.Tech CSE · 2022–2026
               </div>
               <div>
-                <span className="meta-tag tag-blue">[MISSION]</span>
-                Code. Build. Ship.
+                <span className="meta-tag tag-blue">currently</span>
+                Building products & mentoring DSA
               </div>
             </div>
 
             <div className="hero-actions">
-              <a href="#projects" className="neo-btn neo-btn-green">VIEW_PROJECTS</a>
-              <a href="#contact" className="neo-btn neo-btn-red">CONTACT ME</a>
+              <a href="#projects" className="neo-btn neo-btn-green">See projects</a>
+              <a href="#contact" className="neo-btn neo-btn-red">Get in touch</a>
             </div>
 
             <div className="hero-links">

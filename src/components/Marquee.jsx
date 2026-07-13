@@ -1,10 +1,10 @@
 export default function Marquee() {
   const items = [
-    'OPEN TO OPPORTUNITIES 🚀',
-    'FULL-STACK ENGINEER 💻',
-    'REACT • NODE • MONGODB ⚡',
-    'BUILDING REAL-WORLD PRODUCTS 🛠️',
-    'AVAILABLE FOR INTERNSHIPS & ROLES 💼',
+    'ASTHA ISSRANI ✨',
+    'BACKEND · FULL STACK 💻',
+    'NODE · REACT · MONGODB ⚡',
+    'DSA MENTOR · BUILDER 🛠️',
+    'OPEN TO INTERNSHIPS 🚀',
   ]
 
   const row = [...items, ...items]

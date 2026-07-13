@@ -10,19 +10,18 @@ export default function About() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="about-title">Hi people!</h2>
+        <h2 className="about-title">A little about me</h2>
         <p className="about-text">
           I am a{' '}
-          <span className="about-highlight">B.Tech CSE student at PSIT, Kanpur</span>, building
-          real-time systems, APIs, and full-stack products. I define myself as a Woman in STEM
-          who loves shipping useful software.
+          <span className="about-highlight">B.Tech CSE student at PSIT, Kanpur</span>, focused on
+          real-time systems, APIs, and full-stack products. I enjoy turning messy problems into
+          clean, shippable software.
         </p>
         <p className="about-text">
-          I bring strong problem-solving, technical depth, and clear communication — from mentoring
-          DSA in C++ to volunteering with community drives and building products like Meetify and
-          VibeKit Studio.
+          Outside coursework I mentor DSA in C++, volunteer with community initiatives, and build
+          things like Meetify and VibeKit Studio — always learning by doing.
         </p>
-        <div className="about-banner">🚀 Open to Software Internships & Full-Stack Roles</div>
+        <div className="about-banner">Open to internships & full-stack roles</div>
       </motion.div>
     </section>
   )

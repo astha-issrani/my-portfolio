@@ -28,11 +28,11 @@ export default function LoadingScreen() {
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.45 }}
         >
-          <h1 className="loading-title">LOADING...</h1>
+          <h1 className="loading-title">ASTHA.OS</h1>
           <div className="loading-bar-track">
             <div className="loading-bar-fill" style={{ width: `${Math.min(progress, 100)}%` }} />
           </div>
-          <p className="loading-pct">{Math.min(progress, 100)}%</p>
+          <p className="loading-pct">booting… {Math.min(progress, 100)}%</p>
         </motion.div>
       )}
     </AnimatePresence>
