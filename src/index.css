@@ -7,29 +7,29 @@
 }
 
 :root {
-  --bg: #fff5f9;
-  --bg-card: rgba(255, 255, 255, 0.92);
-  --cyan: #db2777;
-  --green: #ec4899;
-  --purple: #c026d3;
-  --hot: #f59e0b;
-  --text: #1a0812;
-  --text-muted: #9d4b6a;
-  --border: rgba(219, 39, 119, 0.22);
-  --glow-cyan: 0 0 20px rgba(219, 39, 119, 0.25);
-  --glow-green: 0 0 18px rgba(236, 72, 153, 0.2);
-  --grid-primary: 219, 39, 119;
-  --grid-accent: 236, 72, 153;
-  --bg-rgb: 255, 245, 249;
-  --robot-bg: #fce7f3;
-  --robot-bg-dark: #fbcfe8;
-  --navbar-scrolled: rgba(255, 245, 249, 0.92);
-  --gradient-text: linear-gradient(135deg, #db2777 0%, #c026d3 45%, #f59e0b 100%);
-  --gradient-border: linear-gradient(135deg, #db2777, #ec4899, #f59e0b, #c026d3);
-  --blob-1: rgba(219, 39, 119, 0.18);
-  --blob-2: rgba(236, 72, 153, 0.14);
-  --blob-3: rgba(245, 158, 11, 0.12);
-  --blob-4: rgba(192, 38, 211, 0.1);
+  --bg: #fff8f1;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --cyan: #0d9488;
+  --green: #e11d48;
+  --purple: #ea580c;
+  --hot: #ca8a04;
+  --text: #1c1209;
+  --text-muted: #8a5a3c;
+  --border: rgba(13, 148, 136, 0.28);
+  --glow-cyan: 0 0 22px rgba(13, 148, 136, 0.28);
+  --glow-green: 0 0 18px rgba(225, 29, 72, 0.22);
+  --grid-primary: 13, 148, 136;
+  --grid-accent: 234, 88, 12;
+  --bg-rgb: 255, 248, 241;
+  --robot-bg: #ffedd5;
+  --robot-bg-dark: #fed7aa;
+  --navbar-scrolled: rgba(255, 248, 241, 0.92);
+  --gradient-text: linear-gradient(135deg, #0d9488 0%, #e11d48 40%, #ea580c 70%, #ca8a04 100%);
+  --gradient-border: linear-gradient(135deg, #0d9488, #e11d48, #ea580c, #ca8a04);
+  --blob-1: rgba(13, 148, 136, 0.2);
+  --blob-2: rgba(225, 29, 72, 0.14);
+  --blob-3: rgba(234, 88, 12, 0.16);
+  --blob-4: rgba(202, 138, 4, 0.12);
   --font-display: 'Orbitron', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -220,6 +220,14 @@ main {
 
 .contact-section.section-creative::before {
   background: radial-gradient(ellipse 50% 40% at 80% 60%, color-mix(in srgb, #10b981 8%, transparent), transparent);
+}
+
+.section-blackboard::before {
+  background: radial-gradient(ellipse 55% 40% at 10% 70%, color-mix(in srgb, #0d9488 10%, transparent), transparent);
+}
+
+.section-games::before {
+  background: radial-gradient(ellipse 55% 45% at 90% 30%, color-mix(in srgb, #e11d48 9%, transparent), transparent);
 }
 
 .colorful-card {
@@ -452,7 +460,11 @@ main {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 8px;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 1100px;
+  margin: 8px auto 0;
 }
 
 .nav-links button {
@@ -460,9 +472,9 @@ main {
   border: 1px solid transparent;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  padding: 8px 14px;
+  font-size: 0.62rem;
+  letter-spacing: 0.8px;
+  padding: 6px 10px;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
@@ -1544,6 +1556,316 @@ main {
   opacity: 0.6;
 }
 
+/* ─── Playground intro ─── */
+.play-intro {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 540px;
+  margin: -12px 0 28px;
+  line-height: 1.55;
+}
+
+/* ─── Blackboard ─── */
+.blackboard-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blackboard-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.pen-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pen-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--pen) 55%, #fff);
+  background: var(--pen);
+  cursor: pointer;
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--pen) 40%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pen-swatch:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.pen-swatch.active {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pen) 45%, transparent);
+}
+
+.brush-size {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.brush-size input {
+  width: 110px;
+  accent-color: var(--cyan);
+}
+
+.blackboard-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.board-tool {
+  padding: 8px 14px;
+  font-size: 0.68rem;
+  min-height: 36px;
+}
+
+.board-tool.active {
+  border-color: var(--hot);
+  color: var(--hot);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--hot) 35%, transparent);
+}
+
+.blackboard-frame {
+  position: relative;
+  border-radius: 14px 14px 8px 8px;
+  overflow: hidden;
+  border: 10px solid #5c4030;
+  box-shadow:
+    0 18px 40px rgba(28, 18, 9, 0.22),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+  background: #1a3d2e;
+}
+
+.blackboard-canvas {
+  display: block;
+  width: 100%;
+  height: 380px;
+  touch-action: none;
+  cursor: crosshair;
+  background: #1a3d2e;
+}
+
+.blackboard-ledge {
+  height: 14px;
+  background: linear-gradient(180deg, #7a5538, #4a2f1c);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Games ─── */
+.game-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.game-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-card) 90%, transparent);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.game-tab:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.game-tab.active {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--cyan) 55%, transparent);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cyan) 14%, var(--bg-card)),
+      color-mix(in srgb, var(--purple) 10%, var(--bg-card))
+    );
+  box-shadow: var(--glow-cyan);
+}
+
+.game-panel {
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--cyan) 8%, var(--bg-card)),
+      color-mix(in srgb, var(--hot) 6%, var(--bg-card))
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transition: box-shadow 0.2s;
+}
+
+.game-panel.miss {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--green) 45%, transparent);
+}
+
+.game-status {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  min-height: 1.4em;
+  text-align: center;
+}
+
+.game-reset {
+  min-width: 140px;
+}
+
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(100%, 280px);
+}
+
+.ttt-cell {
+  aspect-ratio: 1;
+  min-height: 72px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 30%, transparent);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, border-color 0.2s;
+}
+
+.ttt-cell:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+}
+
+.ttt-cell.x { color: var(--cyan); }
+.ttt-cell.o { color: var(--green); }
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: min(100%, 360px);
+}
+
+.memory-card {
+  position: relative;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: transparent;
+  perspective: 600px;
+  padding: 0;
+  transform-style: preserve-3d;
+}
+
+.memory-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transition: transform 0.35s ease;
+  font-size: 1.4rem;
+  border: 1px solid var(--border);
+}
+
+.memory-face.front {
+  background: linear-gradient(145deg, var(--cyan), var(--purple));
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.memory-face.back {
+  background: var(--bg-card);
+  transform: rotateY(180deg);
+}
+
+.memory-card.flipped .memory-face.front {
+  transform: rotateY(180deg);
+}
+
+.memory-card.flipped .memory-face.back {
+  transform: rotateY(0deg);
+}
+
+.memory-card.matched .memory-face.back {
+  border-color: color-mix(in srgb, var(--hot) 55%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--hot) 25%, transparent);
+}
+
+.whack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: min(100%, 300px);
+}
+
+.whack-hole {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px dashed color-mix(in srgb, var(--text-muted) 35%, transparent);
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.whack-dot {
+  width: 42%;
+  height: 42%;
+  border-radius: 50%;
+  background: transparent;
+  transform: scale(0.4);
+  opacity: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.whack-hole.active {
+  border-color: var(--green);
+  background: color-mix(in srgb, var(--green) 12%, transparent);
+}
+
+.whack-hole.active .whack-dot {
+  opacity: 1;
+  transform: scale(1);
+  background: radial-gradient(circle at 35% 30%, #fff7ed, var(--green) 55%, var(--purple));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--green) 55%, transparent);
+}
+
 .cursor-blink {
   animation: blink 1s step-end infinite;
 }
@@ -1961,4 +2283,40 @@ main {
     font-size: 0.62rem;
     padding: 5px 10px;
   }
+
+  .blackboard-canvas {
+    height: 280px;
+  }
+
+  .blackboard-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blackboard-actions {
+    width: 100%;
+  }
+
+  .board-tool {
+    flex: 1;
+  }
+
+  .game-tabs {
+    gap: 8px;
+  }
+
+  .game-tab {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+  }
+
+  .ttt-cell {
+    font-size: 1.6rem;
+    min-height: 64px;
+  }
+
+  .memory-grid {
+    max-width: 100%;
+  }
 }
+

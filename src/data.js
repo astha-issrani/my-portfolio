@@ -124,5 +124,7 @@ export const navLinks = [
   { id: 'projects', label: 'PROJECTS' },
   { id: 'skills', label: 'SKILLS' },
   { id: 'education', label: 'EDUCATION' },
+  { id: 'blackboard', label: 'BLACKBOARD' },
+  { id: 'games', label: 'GAMES' },
   { id: 'contact', label: 'CONTACT' },
 ]

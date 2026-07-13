@@ -1,5 +1,37 @@
 export const themes = [
   {
+    id: 'colour-pop',
+    name: 'Colour Pop',
+    emoji: '🎨',
+    mode: 'light',
+    vars: {
+      '--bg': '#fff8f1',
+      '--bg-card': 'rgba(255, 255, 255, 0.94)',
+      '--cyan': '#0d9488',
+      '--green': '#e11d48',
+      '--purple': '#ea580c',
+      '--hot': '#ca8a04',
+      '--text': '#1c1209',
+      '--text-muted': '#8a5a3c',
+      '--border': 'rgba(13, 148, 136, 0.28)',
+      '--glow-cyan': '0 0 22px rgba(13, 148, 136, 0.28)',
+      '--glow-green': '0 0 18px rgba(225, 29, 72, 0.22)',
+      '--grid-primary': '13, 148, 136',
+      '--grid-accent': '234, 88, 12',
+      '--bg-rgb': '255, 248, 241',
+      '--robot-bg': '#ffedd5',
+      '--robot-bg-dark': '#fed7aa',
+      '--navbar-scrolled': 'rgba(255, 248, 241, 0.92)',
+      '--gradient-text': 'linear-gradient(135deg, #0d9488 0%, #e11d48 40%, #ea580c 70%, #ca8a04 100%)',
+      '--gradient-border': 'linear-gradient(135deg, #0d9488, #e11d48, #ea580c, #ca8a04)',
+      '--blob-1': 'rgba(13, 148, 136, 0.2)',
+      '--blob-2': 'rgba(225, 29, 72, 0.14)',
+      '--blob-3': 'rgba(234, 88, 12, 0.16)',
+      '--blob-4': 'rgba(202, 138, 4, 0.12)',
+    },
+    preview: ['#0d9488', '#e11d48', '#ea580c'],
+  },
+  {
     id: 'light-rose',
     name: 'Light Rose',
     emoji: '☀️',
@@ -219,7 +251,7 @@ export const themes = [
   },
 ]
 
-export const DEFAULT_THEME = 'light-rose'
+export const DEFAULT_THEME = 'colour-pop'
 
 export function getTheme(id) {
   return themes.find((t) => t.id === id) ?? themes[0]

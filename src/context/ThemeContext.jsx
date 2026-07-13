@@ -5,9 +5,12 @@ const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
   const [themeId, setThemeId] = useState(() => {
-    const stored = localStorage.getItem('portfolio-theme')
-    if (stored === 'rose-pink') return DEFAULT_THEME
-    return stored || DEFAULT_THEME
+    const migrated = localStorage.getItem('portfolio-theme-v2')
+    if (!migrated) {
+      localStorage.setItem('portfolio-theme-v2', '1')
+      return DEFAULT_THEME
+    }
+    return localStorage.getItem('portfolio-theme') || DEFAULT_THEME
   })
 
   useEffect(() => {
