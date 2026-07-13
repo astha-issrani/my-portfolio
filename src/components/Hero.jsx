@@ -20,7 +20,7 @@ export default function Hero() {
     <section id="hero" className="hero section">
       <motion.div className="hero-card neo-card" variants={container} initial="hidden" animate="show">
         <motion.div className="hero-stickers" variants={item}>
-          <span className="sticker sticker-pink">APIs · Systems · Web</span>
+          <span className="sticker sticker-pink">Secure · Scalable · Sustainable</span>
           <span className="sticker sticker-yellow">Available for internships</span>
         </motion.div>
 
@@ -44,7 +44,7 @@ export default function Hero() {
               </div>
               <div>
                 <span className="meta-tag tag-blue">currently</span>
-                Building products & mentoring DSA
+                Building secure, scalable & sustainable products · problem-solving
               </div>
             </div>
 

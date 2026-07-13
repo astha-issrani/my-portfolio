@@ -1,10 +1,11 @@
 export default function Marquee() {
   const items = [
-    'ASTHA ISSRANI ✨',
+    'SECURE · SCALABLE · SUSTAINABLE 🔒',
     'BACKEND · FULL STACK 💻',
     'NODE · REACT · MONGODB ⚡',
     'DSA MENTOR · BUILDER 🛠️',
     'OPEN TO INTERNSHIPS 🚀',
+    'ASTHA ISSRANI ✨',
   ]
 
   const row = [...items, ...items]

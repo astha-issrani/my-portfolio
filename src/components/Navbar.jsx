@@ -25,7 +25,7 @@ export default function Navbar() {
     >
       <div className="nav-inner">
         <button className="nav-logo" onClick={() => scrollTo('hero')} type="button">
-          Astha<span className="nav-logo-dot">.</span>
+          be asthatic
         </button>
 
         <LiveClock />
