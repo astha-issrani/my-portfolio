@@ -1,12 +1,12 @@
 export const cardAccents = [
-  { a: '#ff9fac', b: '#fda4af', emoji: '✦' },
-  { a: '#a78bfa', b: '#c4b5fd', emoji: '◆' },
-  { a: '#fcd34d', b: '#fde68a', emoji: '★' },
-  { a: '#60a5fa', b: '#93c5fd', emoji: '●' },
-  { a: '#4ade80', b: '#86efac', emoji: '▲' },
-  { a: '#f87171', b: '#fca5a5', emoji: '♦' },
-  { a: '#fb923c', b: '#fdba74', emoji: '✺' },
-  { a: '#e879f9', b: '#f0abfc', emoji: '❋' },
+  { a: '#ff9fac', b: '#fcd34d', emoji: '✦' },
+  { a: '#a78bfa', b: '#60a5fa', emoji: '◆' },
+  { a: '#fcd34d', b: '#4ade80', emoji: '★' },
+  { a: '#60a5fa', b: '#ff9fac', emoji: '●' },
+  { a: '#4ade80', b: '#a78bfa', emoji: '▲' },
+  { a: '#f87171', b: '#fcd34d', emoji: '♦' },
+  { a: '#ff9fac', b: '#60a5fa', emoji: '✺' },
+  { a: '#a78bfa', b: '#4ade80', emoji: '❋' },
 ]
 
 export function getAccent(index) {

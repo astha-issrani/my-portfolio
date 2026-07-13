@@ -7,14 +7,7 @@ import LiveClock from './LiveClock'
 
 export default function Navbar() {
   const { themeId } = useTheme()
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -28,22 +21,26 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
+      className="navbar neo-nav"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="nav-inner">
         <button className="nav-logo" onClick={() => scrollTo('hero')} type="button">
-          <span className="logo-bracket">[</span>
-          <span className="logo-text">AI</span>
-          <span className="logo-bracket">]</span>
-          <span className="logo-pulse" />
+          Astha
         </button>
 
         <LiveClock />
 
         <div className="nav-controls">
+          <button
+            type="button"
+            className="nav-contact-btn"
+            onClick={() => scrollTo('contact')}
+          >
+            CONTACT
+          </button>
           <ThemeSwitcher key={themeId} />
           <button
             className={`nav-toggle ${menuOpen ? 'open' : ''}`}
@@ -70,10 +67,9 @@ export default function Navbar() {
       </AnimatePresence>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map((link, i) => (
+        {navLinks.map((link) => (
           <li key={link.id}>
             <button onClick={() => scrollTo(link.id)} type="button">
-              <span className="nav-index">0{i + 1}</span>
               {link.label}
             </button>
           </li>

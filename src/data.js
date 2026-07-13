@@ -163,13 +163,14 @@ export const volunteering = [
 ]
 
 export const navLinks = [
-  { id: 'hero', label: 'INIT' },
+  { id: 'hero', label: 'HOME' },
+  { id: 'about', label: 'ABOUT' },
   { id: 'experience', label: 'EXPERIENCE' },
   { id: 'projects', label: 'PROJECTS' },
   { id: 'skills', label: 'SKILLS' },
   { id: 'education', label: 'EDUCATION' },
   { id: 'volunteering', label: 'VOLUNTEER' },
-  { id: 'blackboard', label: 'BLACKBOARD' },
+  { id: 'blackboard', label: 'DRAW' },
   { id: 'games', label: 'GAMES' },
   { id: 'contact', label: 'CONTACT' },
 ]

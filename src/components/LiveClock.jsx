@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
 function formatClock(date) {
-  const day = date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()
+  const day = date.toLocaleDateString('en-US', { weekday: 'long' })
   const fullDate = date.toLocaleDateString('en-US', {
-    month: 'short',
+    weekday: 'long',
+    month: 'numeric',
     day: 'numeric',
     year: 'numeric',
-  }).toUpperCase()
+  })
   const time = date.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
@@ -26,8 +27,6 @@ export default function LiveClock() {
 
   return (
     <div className="live-clock" aria-live="polite" title="Local date and time">
-      <span className="live-clock-day">{now.day}</span>
-      <span className="live-clock-sep" aria-hidden="true">·</span>
       <span className="live-clock-date">{now.fullDate}</span>
       <span className="live-clock-sep" aria-hidden="true">·</span>
       <span className="live-clock-time">{now.time}</span>

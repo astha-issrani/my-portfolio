@@ -112,8 +112,8 @@ export default function Blackboard() {
   return (
     <section id="blackboard" className="section section-creative section-blackboard">
       <div className="section-header">
-        <span className="section-tag">// 06</span>
-        <h2 className="section-title">BLACKBOARD</h2>
+        <span className="section-tag">// doodle</span>
+        <h2 className="section-title">DRAW HERE!</h2>
         <div className="section-line" />
       </div>
 
@@ -124,7 +124,7 @@ export default function Blackboard() {
         viewport={{ once: true }}
         transition={{ duration: 0.45 }}
       >
-        Grab a chalk colour and doodle anything — notes, doodles, or secret messages.
+        ✨ Bored? Doodle something cool!
       </motion.p>
 
       <motion.div

@@ -33,7 +33,7 @@ export default function Volunteering() {
         viewport={{ once: true }}
         transition={{ duration: 0.45 }}
       >
-        Giving back through tech and community — building truth-first media and serving meals where it matters.
+        Giving back through tech and community — mentoring DSA, building truth-first media, and serving meals where it matters.
       </motion.p>
 
       <div className="volunteer-list">
