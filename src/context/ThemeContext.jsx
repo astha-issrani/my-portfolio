@@ -5,9 +5,9 @@ const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
   const [themeId, setThemeId] = useState(() => {
-    const migrated = localStorage.getItem('portfolio-theme-v3')
+    const migrated = localStorage.getItem('portfolio-theme-v4')
     if (!migrated) {
-      localStorage.setItem('portfolio-theme-v3', '1')
+      localStorage.setItem('portfolio-theme-v4', '1')
       return DEFAULT_THEME
     }
     return localStorage.getItem('portfolio-theme') || DEFAULT_THEME

@@ -91,13 +91,15 @@ export default function Volunteering() {
                   )}
                 </div>
 
-                <div className="volunteer-photos">
-                  {photos.map((photo) => (
-                    <figure key={photo.alt} className="volunteer-photo">
-                      <img src={photo.src} alt={photo.alt} loading="lazy" />
-                    </figure>
-                  ))}
-                </div>
+                {photos.length > 0 && (
+                  <div className="volunteer-photos">
+                    {photos.map((photo) => (
+                      <figure key={photo.alt} className="volunteer-photo">
+                        <img src={photo.src} alt={photo.alt} loading="lazy" />
+                      </figure>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.article>
           )

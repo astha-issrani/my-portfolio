@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 import { navLinks } from '../data'
 import ThemeSwitcher from './ThemeSwitcher'
+import LiveClock from './LiveClock'
 
 export default function Navbar() {
   const { themeId } = useTheme()
@@ -39,6 +40,8 @@ export default function Navbar() {
           <span className="logo-bracket">]</span>
           <span className="logo-pulse" />
         </button>
+
+        <LiveClock />
 
         <div className="nav-controls">
           <ThemeSwitcher key={themeId} />

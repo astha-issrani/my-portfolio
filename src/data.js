@@ -119,6 +119,20 @@ export const extracurricular = [
 
 export const volunteering = [
   {
+    id: 'worklyst',
+    org: 'Worklyst Educate',
+    role: 'DSA Mentor · Team Member',
+    project: null,
+    emoji: '📚',
+    description:
+      'Worked with the Worklyst Educate team mentoring students in Data Structures & Algorithms using C++, helping learners build strong problem-solving foundations.',
+    highlights: [
+      'Mentored students in DSA with a focus on C++ implementations.',
+      'Guided learners through core concepts, patterns, and practice problem-solving.',
+    ],
+    tags: ['DSA', 'C++', 'Mentorship', 'Teaching'],
+  },
+  {
     id: 'ecell',
     org: 'E-Cell Club',
     role: 'Full Stack Intern · Volunteer',
