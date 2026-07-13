@@ -112,7 +112,7 @@ export default function Blackboard() {
   return (
     <section id="blackboard" className="section section-creative section-blackboard">
       <div className="section-header">
-        <span className="section-tag">// 05</span>
+        <span className="section-tag">// 06</span>
         <h2 className="section-title">BLACKBOARD</h2>
         <div className="section-line" />
       </div>

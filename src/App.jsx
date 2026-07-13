@@ -7,6 +7,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Education from './components/Education'
+import Volunteering from './components/Volunteering'
 import Blackboard from './components/Blackboard'
 import Games from './components/Games'
 import Contact from './components/Contact'
@@ -26,6 +27,7 @@ export default function App() {
         <Projects />
         <Skills />
         <Education />
+        <Volunteering />
         <Blackboard />
         <Games />
         <Contact />

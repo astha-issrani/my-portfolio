@@ -15,7 +15,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section section-creative contact-section">
       <div className="section-header">
-        <span className="section-tag">// 07</span>
+        <span className="section-tag">// 08</span>
         <h2 className="section-title">CONTACT</h2>
         <div className="section-line" />
       </div>

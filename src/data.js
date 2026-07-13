@@ -113,9 +113,39 @@ export const achievements = [
 ]
 
 export const extracurricular = [
-  'E-Cell, PSIT: Contributed to entrepreneurship projects focusing on problem-solving and management.',
   'Technical Workshops: Completed hands-on training in GitHub (Version Control) and collaborative workflows.',
   'Collegiate Dance Team: Collaborated in a team environment for high-pressure stage performances.',
+]
+
+export const volunteering = [
+  {
+    id: 'ecell',
+    org: 'E-Cell Club',
+    role: 'Full Stack Intern · Volunteer',
+    project: 'Jatayu',
+    emoji: '📰',
+    description:
+      'Built and contributed to Jatayu — a platform designed to surface true news and help eradicate false information, combining product thinking with full-stack engineering.',
+    highlights: [
+      'Worked as a full-stack intern on the Jatayu news-integrity project.',
+      'Focused on features that help users identify authentic information and cut through misinformation.',
+    ],
+    tags: ['Full Stack', 'React', 'News Integrity', 'E-Cell'],
+  },
+  {
+    id: 'rha',
+    org: 'RHA Foundation',
+    role: 'Cadet · Volunteer',
+    project: null,
+    emoji: '🫶',
+    description:
+      'Served as a cadet with the Robin Hood Army Foundation, donating meals to children and communities in need through on-ground food distribution drives.',
+    highlights: [
+      'Participated in meal donation drives for underprivileged children.',
+      'Supported community outreach as an RHA Foundation cadet.',
+    ],
+    tags: ['Community Service', 'Meal Drives', 'RHA Cadet'],
+  },
 ]
 
 export const navLinks = [
@@ -124,6 +154,7 @@ export const navLinks = [
   { id: 'projects', label: 'PROJECTS' },
   { id: 'skills', label: 'SKILLS' },
   { id: 'education', label: 'EDUCATION' },
+  { id: 'volunteering', label: 'VOLUNTEER' },
   { id: 'blackboard', label: 'BLACKBOARD' },
   { id: 'games', label: 'GAMES' },
   { id: 'contact', label: 'CONTACT' },

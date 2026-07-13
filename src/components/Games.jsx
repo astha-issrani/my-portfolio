@@ -249,7 +249,7 @@ export default function Games() {
   return (
     <section id="games" className="section section-creative section-games">
       <div className="section-header">
-        <span className="section-tag">// 06</span>
+        <span className="section-tag">// 07</span>
         <h2 className="section-title">GAMES</h2>
         <div className="section-line" />
       </div>
